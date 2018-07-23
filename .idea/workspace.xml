@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86aebf3a-826b-4bb2-b816-07d8471ceeda" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/第七章 用户输入和while语句.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/第2章_变量和简单数据模型.py" beforeDir="false" afterPath="$PROJECT_DIR$/第2章_变量和简单数据模型.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="第2章_变量和简单数据模型.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="第2章_变量和简单数据模型.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/第2章_变量和简单数据模型.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="628">
               <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="第七章 用户输入和while语句.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/第七章 用户输入和while语句.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2075">
+              <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -303,11 +314,19 @@
       <option name="project" value="LOCAL" />
       <updated>1532327298891</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="while">
+      <created>1532328394604</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1532328394604</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -378,7 +397,8 @@
     <MESSAGE value="提交代码" />
     <MESSAGE value="43223" />
     <MESSAGE value="1111" />
-    <option name="LAST_COMMIT_MESSAGE" value="1111" />
+    <MESSAGE value="while" />
+    <option name="LAST_COMMIT_MESSAGE" value="while" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -693,13 +713,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第七章 用户输入和while语句.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/第2章_变量和简单数据模型.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="628">
           <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第七章 用户输入和while语句.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2075">
+          <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
         </state>
       </provider>
     </entry>

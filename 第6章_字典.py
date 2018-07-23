@@ -234,7 +234,44 @@ print("You ordered a " + pizza["crust"] + "-crust pizza " + "with tha following 
 for toppings in pizza["toppings"]:
     print("\t" + toppings)
 
-print("\n动手试一试")
+print("\n6.4.2 在字典中存储列表")
+#假设有个小店，里边卖了2种粥，但是每种粥的配料都不一样，利用一个字典记录两种粥及其配料
+gruel={
+    "八宝粥":["大米","桂圆","红枣","芡实","莲子","薏仁","黑豆","核桃仁"],
+    "瘦肉粥":["大米","瘦肉"]
+    }
+for keys, values in gruel.items():
+    print("\n" + keys,end=":")   #print默认是打印一行，结尾加换行。end=" "意思是末尾不换行，加空格。
+    for value in values:
+        print(value,end=" ")
+
+print("\n6.4.3 在字典中存储字典")
+grade={
+    '赵丽颖':{
+        '国籍':'中国',
+        '民族':'汉',
+        '出生日期':'1987年10月16日',
+        '身高':'165cm',
+        },
+    '杨幂':{
+        '国籍':'中国',
+        '民族':'汉',
+        '出生日期':'1986年9月12日',
+        '身高':'166.5cm',
+        }
+    }
+for name,information in grade.items():
+    print("\n" + name)
+    for key,value in information.items():
+        print(key+': '+value)
+
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+for new_dict in dict.keys():
+    print(new_dict)
+for keys, values in dict.items():
+    print(keys)
+
+print("\nP99 动手试一试")
 print("6.7 人")
 name_0 = {"last_name": "li", "first_name": "zhi_xin", "age": 18, "city": "shengzhen"}
 name_1 = {"last_name": "jiang", "first_name": "jing_jing", "age": 19, "city": "zhuhai"}
@@ -261,3 +298,38 @@ for name, country in favorite_places.items():
     print(friend[0].title() + " said " + name + " is favorite place is " )
     for countryes in country:
         print("\t" + countryes)
+
+print("\n6-10 喜欢的数字")
+favorite_digital = {"selina": [5,9,0],
+                    "candy": [6,3,],
+                    "sue": [8,9,1,5],
+                    "hester": [1,2,3,4,5],
+                    "blue": [2.9],
+}
+for name, digital in favorite_digital.items():
+    print("\nname: " + name)
+    print("digital: " + str(digital))
+    print(name.title() + " faviorite digital is " + str(digital) + " .")
+
+print("6-11 城市")
+cities ={
+    "广州": {
+        "country":"china",
+        "population": "10000",
+       "fact": "it is beautiful.",
+         },
+    "东京": {
+        "country": "japan",
+        "population": "500",
+        "fact": "It is very developed here.",
+        },
+    "纽约": {
+        "country": "united_states",
+        "population": "20000",
+        "fact": "The food is very rich here.",
+        },
+    }
+for country, information in cities.items():
+    print("\n" + country.title())
+    for key, value in  information.items():
+        print(key.title() + ": " + value.title())
