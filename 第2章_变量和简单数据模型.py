@@ -86,5 +86,51 @@ print(10 - 2)
 print(8 * 1)
 print(24 / 3)
 
+print("7.2.2  让用户选择何时退出")
+#可使用while循环让程序在用户愿意时不断地运行，如下面的程序，我们在其中定义了一个退出值，
+#只要用户输入的不是这个值，程序就接着运行：
+#prompt = '\nTell me something, and I will repeat it back to you: '
+#prompt += "\nEnter 'quit' to end the program. "
+#message = "" #将变量message的初始值设置为空字符串""，让Python首次执行while代码时有可供检查的东西。
+#while message != 'quit':  # Python重新检查while语句中的条件。只要用户输入的不是单词'quit'，Python就会再次显示提示消息并
+    #message = input(prompt)   # 等待用户输入。等到用户终于输入'quit'后，Python停止执行while循环，而整个程序也到此结束。
+    #print(message)
 
+#可不将单词"quit"打印出来，可使用if来判断：
+#prompt = '\nTell me something, and I will repeat it back to you: '
+#prompt += "\nEnter 'quit' to end the program. "
+#message = ""
+#while message != 'quit':
+    #message = input(prompt)
+#if message != "quit":
+    #print(message)
+#这个程序与上面程序的区别是，这个程序在打印的时候进行了一次判断，判断在什么样的条件下才允许打印，什么样的情况下不允许打印。
+
+print("\n7.2.3 使用标志")
+#在要求很多条件都满足才能继续运行的程序中，可定义一个变量，用于判断整个程序是否处于活动状态。整个变量被称为标志，可让程序
+#在标志为True时继续运行,并在任何事件导致标志的值为False时让程序停止运行。这样在while语句中就只需检查标志的当前值是否为True，
+#prompt = "\nTell me something and I will repeat it back to you: "
+#prompt += "\nEnter 'quit' to end the program. "
+#active = True
+#while active:
+    #message = input(prompt)
+    #if message == 'quit':
+        #active = False
+    #else:
+        #print(message)
+#我们将变量active设置成了True，让程序最初处于活动状态。这样做简化了while语句，因为不需要在其中做任何比较相关的逻辑，
+#由程序的其他部分处理。只要变量active为True，循环就将继续运行。
+#在while循环中，我们在用户输入后使用一条if语句来检查变量message的值。如果用户输入的是'quit', 我们就将变量active设置为False，
+# 这将导致while循环不在执行。如果用户输入的不是'quit', 我们就将输入作为一条消息打印出来。
+
+#在前一个示例中，我们将条件测试直接放在了while语句中，而在这个程序中，我们使用了一个标志来指出程序是否处于
+#活动状态，这样如果要添加测试(如elif语句）以检查是否发生了其他导致active变为False的事件，将很容易。
+print("\n7-4 动手试一试")
+prompt = "\nPlease enter your choice of pizza ingredients: "
+prompt += "\nEnter 'quit' to end the program."
+message = " "
+while message != "quit":
+    message = input(prompt)
+if message != "quit":
+    print(message)
 
