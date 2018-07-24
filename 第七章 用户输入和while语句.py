@@ -82,3 +82,72 @@ while current_number <= 5:
 #因此Python打印2，并将current_number加1，使其为3，一次类推。一旦current_number大于5，循环将停止，整个程序也将到此结束：
 
 print("\n7.2.2 让用户选择何时退出")
+print("\n7.2.4  使用break退出循环")
+#要立即退出while循环，不再运行循环中余下的代码，也不管条件测试的结果如何，可使用break语句。break语句用于控制程序流程，
+#可使用它来控制哪些代码行将执行，哪些代码行不执行，从而让程序按我们的要求执行要执行的代码。
+#例如，来看一个让用户指出他到过哪些地方的程序。在这个程序中，我们可以在用户输入'quit'后使用break语句立即退出while循环：
+#prompt = '\nPlease enter the name of a city you have visited: '
+#prompt += "\nEnter 'quit' when you are finished. "
+#while True:
+    #cities = input(prompt)
+    #if cities == 'quit':
+        #break
+    #else:
+        #print("I'd love to go to " + cities.title() + ".")
+
+print("\n7.2.5  在循环中使用continue")
+#要返回到循环开头，并根据条件测试结果决定是否继续执行循环，可使用continue语句，它不像break语句那样不再执行余下的代码
+# 并退出整个循环。例如来看一个从1数到10，但只打印其中奇数的循环：
+current_number = 0
+while current_number < 10:
+    current_number += 1
+    if current_number % 2 == 0:
+        continue
+print(current_number)
+#们首先将current_number设置成了0，由于它小于10，Python进入while循环。进入循环后，我们以步长1的方式往上数，因此current_number为1，接下
+#来，if语句检查current_number与2的求模运算结果。如果结果为0(意味着current_number可能被2整除),就执行continue语句，让Python忽略余下的代码，
+# 并返回到循环的开头。如果当前的数字不能被2整除，就执行循环中余下的代码，Python将这个数字打印出来。
+
+print("\7.2.6 避免无限循环")
+#每个while循环都必须有停止运行的途径，这样才不会没完没了地执行下去。例如，下面的循环从1数到5：x = 1
+x = 1
+while x <= 5:
+    print(x)
+    x += 1   #但如果我们像下面不小心遗漏了代码x += 1，这个循环将没完没了地运行：
+#但如果我们像下面不小心遗漏了代码x += 1，这个循环将没完没了地运行：这个循环将没完没了地运行！
+
+print("\n7.3 使用while循环来处理列表和字典")
+#到目前为止，我们每次都值处理了一项用户信息：获取用户输入，再将输入打印出来或作出应答；循环再次运行时，我们获悉了
+#另一个输入值并作出响应。然而，要记录大量的用户和信息，需要在while循环中使用列表和字典。
+#for循环是一种遍历列表的有效方式，但在for循环中不应修改列表，否则将导致Python难以跟踪其中的元素。要在遍历列表的同时对其进行修改，
+#可使用while循环。通过将while循环同列表和字典结合起来使用，可收集、存储并组织大量输入，供以后查看和显示。
+
+print("\n7.3.1  在列表之间移动元素")
+#假设有一个列表，其中包含新注册但还为验证的网站用户；验证这些用户后如何将它们移到另一个已验证用户列表中呢？
+# 一种办法是使用while循环，在验证用户的同时将其从未验证用户列表中提取出来，再将其加入到另一个已验证用户列表中：
+
+unconfirmed_users = ['alice','brian','candace']  #首先，创建一个待验证用户列表
+confirmed_users = []   #和一个用于存储已验证用户的空列表
+while unconfirmed_users:   #验证每个用户，直到没有为验证用户为止,
+    current_user = unconfirmed_users.pop()  #将每个经过验证的列表都移到已验证用户列表中
+    confirmed_users.insert(1,current_user)
+    print("Verifying user: " + current_user)
+    confirmed_users.insert(1, current_user)
+print("\nThe following users have been confirmed: ")  #显示所有已验证的用户
+for confirmed_user in confirmed_users:
+    print(confirmed_user.title())
+
+#我们首先创建了一个未验证的用户列表，其中包含用户Alice、Brian和Candace，还创建了一个空列表，用户存储已验证的用户。while循环将不断地运行，
+#直到列表unconfirmed_users变成空的，在这个循环中，函数pop()以每次一个的方式从列表unconfirmed_users末尾删除为验证的用户。由于Candance位于列
+#表unconfirmed_users末尾，因此其名字将首先被删除、存储到变量current_user中并加入到列表confirmed_users中。接下来是Brian，然后是Alice。
+#为模拟用户验证过程，我们打印一条验证消息并将用户加入到已验证用户列表中。未验证用户列表越来越短，而已验证用户列表越来越长。未验证用户列表
+#为空后结束循环，再打印已验证用户列表：
+
+print("\n7.3.2 删除包含特定值的所有列表元素") #可用remove()来操作
+#假设我们有一个宠物列表，其中包含多个值为'cat'的元素。要删除所有这些元素，可不断运行一个while循环，直到列表中不在包含值'cat'，如下：
+pets = ['dog','cat','dog','goldfish','cat','rabbit','cat']
+while 'cat' in pets:
+    pets.remove('cat')
+print(pets)
+
+print("\n7.3.3 使用用户输入来填充字典")
