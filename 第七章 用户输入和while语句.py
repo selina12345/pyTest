@@ -95,7 +95,7 @@ print("\n7.2.4  使用break退出循环")
     #else:
         #print("I'd love to go to " + cities.title() + ".")
 
-print("\n7.2.5  在循环中使用continue")
+print("\n7.2.5  在循环中使用continue") #??
 #要返回到循环开头，并根据条件测试结果决定是否继续执行循环，可使用continue语句，它不像break语句那样不再执行余下的代码
 # 并退出整个循环。例如来看一个从1数到10，但只打印其中奇数的循环：
 current_number = 0
@@ -150,4 +150,23 @@ while 'cat' in pets:
     pets.remove('cat')
 print(pets)
 
-print("\n7.3.3 使用用户输入来填充字典") #s
+print("\n7.3.3 使用用户输入来填充字典")
+#可使用while循环提示用户输入任意数量的信息。下面来创建一个调查程序，其中的循环每次执行都提示输入被调查者的名字和回答。
+#我们将收集的数据存储在一个字典中，以便将回答同被调查者关联起来：????
+
+print("\n 动手试一试")
+#7-8 熟食店：创建一个名为Sandwich_orders的列表，在其中包含各种三明治的名字；在创建一个名为finished_sandwiches.所有三明治都制作好后，
+#打印一条消息，将这些三明治列出来。
+Sandwich_orders = ["Tea Sandwiches",'Classic Club Sandwiches','Crilled Cheese Sandwiches','Ham Sandwiches']
+finished_sandwiches = []
+while Sandwich_orders:
+    current_sandwich = Sandwich_orders.pop()
+    finished_sandwiches.append(current_sandwich)
+print(finished_sandwiches)
+
+#7-10 梦想的度假胜地：编写一个程序，调查用户梦想的度假胜地。使用类似于"if you could visit one place in the world,where
+#  would you go?"的提示，并编写一个打印调查结果的代码块。
+
+
+
+

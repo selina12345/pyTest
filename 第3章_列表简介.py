@@ -67,7 +67,7 @@ print(Fruits[1])  # 从列表中删除元素可使用del语句，同时要知道
 
 Fruits = ["apple", "banana", "orange", "peach"]
 print(Fruits)  # 先打印列表中所有的值
-popped_Fruits = Fruits.pop()  # 将列表中末尾的值储存到新新的变量popped_Fruits中，使用pop()删除列表中任何位置的元素，只需在括号中指定要删除的元素索引即可
+popped_Fruits = Fruits.pop()  # 将列表中末尾的值储存到新的变量popped_Fruits中，使用pop()删除列表中任何位置的元素，只需在括号中指定要删除的元素索引即可
 print(Fruits)  # 验证是否删除了末尾的值
 print(popped_Fruits)  # pop()函数用于移除列表中的一个元素（默认最后一个元素），并且返回该元素的值
 
