@@ -10,7 +10,7 @@ print("\n8.1.1 向函数体传递信息")
 #它给username指定一个值。调用greet_user()时，可将一个名字传递给它，如下所示：
 def greet_user(username):
     print("Hello, " + username)
-greet_user("Selina.") #调用函数reet_user("Selina."),并向它提供执行print语句所需的信息。这个函数接受我们传递给它的名字，
+greet_user("Selina.") #调用函数greet_user("Selina."),并向它提供执行print语句所需的信息。这个函数接受我们传递给它的名字，
                       #并向这个人发出问候：Hello, Selina.,我们可以根据需要调用函数greet_user()任意次.
 
 print("\n8.1.2 实参和形参")
@@ -141,3 +141,151 @@ print(musician)
 
 musician = get_formatted_name("Geng","xue","chang")
 print(musician)
+#在函数体中，我们检查是否提供了中间名。Python将非空字符串解读为True，因此如果函数调用中间提供了中间名，if middle_name将为True。如果提供
+#了中间名，就将名、中间名和姓合并为姓名，然后将其修改为首字母大写格式，并返回到函数调用行。在函数调用行，将返回的值存储在变量musician中；然后
+#将这个变量的值打印出来。如果没有提供中间名，middle_name将为空字符串，导致if测试未通过，进而执行else代码块；只是用名和姓来生成姓名，并将设置
+#好格式的姓名返回给函数调用行。在函数调用行，将返回的值存储在变量musician章；然后将这个变量的值打印出来。
+
+print("\n8.3.3 返回字典")
+#函数可返回任何类型的值，包括列表和字典等较复杂的数据结构。例如，下面的函数接受姓名的组成部分，并返回一个表示人的字典：
+def build_person(first_name,last_name):
+    person = {"first":first_name,"last":last_name}   #返回一个字典，其中包含有关一个人的信息
+    return person
+musician = build_person("jimi",'hendrix')
+print(musician)
+
+#我们可以轻松地扩展这个函数，使其接受可选值，如中间名、年龄、职业或我们要存储的其他信息。例如，修改让我们还能存储年龄：
+def build_person(first_name,last_name,age=""):
+    person = {"first":"first_name","last":"last_name"}
+    if age:
+        person["age"] = age
+    return person
+musician = build_person("jimi","hendrix","18")
+print(musician)  #我们新增了一个可选形参age，其默认值设置为空字符串。如果函数调用中包含这形参的值，这个值将存储到字典中。
+
+print("\n8.3.4 结合使用函数和while循环")
+#可将函数同本书前面介绍的任何Python结构结合起来使用。例如，下面将结合使用函数get_formatted_name()和while循环，
+#以更正规的方式问候用户，下面尝试使用名和姓跟用户打招呼：
+#def get_formatted_name(first_name,last_name):
+   # full_name  = first_name + " " + last_name
+    #return full_name.title()
+
+#while True:
+    #print("\nPlease tell me your name: ")
+    #print("Enter 'q' at any time to quit")
+
+    #f_name = input("First name: ")
+    #if f_name == 'q':
+        #break
+
+    #l_name = input("Last name: ")
+    #if l_name == 'q':
+        #break
+
+    #formatted_name = get_formatted_name(f_name,l_name)
+    #print("\nHello, " + formatted_name)
+
+print("\n动手试一试")
+#8-6 城市名： 编写一个名为city_country()的函数，它接受城市的名称及其所属的国家。这个函数应返回一个格式类似于下面这样的字符串：
+def city_country (city,country):
+    print(city.title() + "," + country.title())
+city_country("shenzheng","china")
+city_country("Mumbai","Idia")
+
+print("\n8-7 专辑：编写一个名为make_album()的函数，创建一个描述音乐专辑的字典。这个函数应接受歌手名字和专辑名，并返回一个包含")
+#这两项信息的字典。使用这个函数创建三个表示不同专辑的字典，并打印每个返回值，以核实字典正确地存储了专辑的信息。")
+def make_album(singer_name,album_name,songs=0):
+
+    Music_album = {"singer_name":singer_name,"album_name":album_name}
+    if songs > 0:
+        Music_album["songs"] = songs
+    return Music_album
+
+new_album = make_album("zhaolei","chengdou",1)
+print(new_album)
+
+new_album = make_album("zhangjie","you are big")
+print(new_album)
+#如果使用return，则必须有接收变量，因为return是把函数运行的结果返回给调用行，必须有一个指定的变量能够接收这个返回值，
+#否则，就必须输出这个函数。
+
+print("\n8.4 传递列表")
+#我们经常会发现，向函数传递列表很有用，这种列表包含的可能是名字，数字或更复杂的对象(如字典)。将列表传递给函数后，
+#函数就能直接访问其内容。下面使用函数来提高处理列表的效率。
+#假设有一个用户列表，我们要问候其中的每位用户。下面的示例将一个名字列表传递给一个名为greet_users()的函数，这个函数问候列表中的每个人：
+def greet_users(names):
+    for name in names:
+        msg = "Hello, " + name.title() + "!"
+        print(msg)
+usernames = ['zengmingzhu','gengchangxue','linzhiling','zhaobenshan']
+greet_users(usernames)
+
+print("\n8.4.1 在函数中修改列表") #？？
+#将列表传递给函数后，函数就可对其进行修改。在函数中对这个列表所做的任何修改都是永久性的，这让我们能够高效地处理大量的数据。
+#来看一家为用户提交的设计制作3D打印模型的公司。需要打印的设计存储在一个列表中，打印后移到另一个列表中。
+#下面是在不使用函数的情况下模拟这个过程的代码：
+
+print("\n8.4.2 禁止函数修改列表")  #？？
+print("\8.5 传递任意数量的实参")   #Python允许函数从调用语句中收集任意数量的实参。
+def make_pizza(*toppings):
+    print(toppings)
+make_pizza('pepperoni')
+make_pizza('mushrooms','green peppers','extra cheese')
+
+print("\n我们可以将这条print语句替换为一个循环，对配料列表进行遍历，并对顾客点的比萨进行描述：")
+def make_pizza(*toppings):  #形参名*toppings中的星号让Python创建一个名为toppings的空元组，并将收到的所有值都封装到这个元祖中
+    print("\nMaking a pizza with the following toppings：")
+    for topping in toppings:
+        print(topping)
+make_pizza("pepperoni")
+make_pizza("mushrooms","green peppers","extra cheese")
+
+print("\n8.5.1 结合使用位置实参和任意数量实参")
+#如果要让函数接受不同类型的实参，必须在函数定义中将接纳任意数量实参的形参放在最后。Python先匹配位置实参和关键字实参，
+# 再将余下的实参都收集到最后一个形参中。
+#例如，如果前面的函数还需要一个表示比萨的尺寸的实参，必须将该形参放在形参*toppings的前面：
+def make_pizza(size,*toppings):
+    print("\nMaking a " + str(size) + " inch pizza with the following toppings：")
+    for topping in toppings:
+        print(topping)
+make_pizza("5inch","pepperoni")
+make_pizza(7,"mushrooms","green peppers","extra cheese")
+#ython将收到的第一个值存储在形参size中，并将其他的所有值都存储在元组toppings中。在函数调用中，首先指定表示比萨的尺寸的实参，然后根据需要制定任意数量的配料：
+
+print("\n8.5.2  使用任意数量的关键字实参")
+#需接受任意数量的实参，但预先不知道传递给函数的会是什么样的信息。在这种情况下，可将函数编写成能够接受任意数量的键-值对——
+#调用语句提供了多少就接受多少。一个这样的示例是创建用户简介：我们知道我们将收到有关用户的信息，但不确定会是什么样的信息。
+#在下面的示例中，函数build_profile()接受姓和名，同时还接受任意数量的关键字实参：
+def build_profile(first,last,**user_info):
+    profile = {}     #创建一个字典，其中包含我们知道的有关用户的一切
+    profile["first_name"] = first
+    profile["last_name"] = last
+    for key, value in user_info.items():
+        profile[key] = value  #遍历字典user_info中的键-值对，并将每个键-值对都加入到字典profile中
+    return profile            #我们将字典profile返回给函数调用行。
+user_profile = build_profile("albert","einstein",location = "princeton",field = "physics")
+#调用build_profile(),向它传递名'albert'、姓('einstein')和两个键-值对(location = 'princeton'和field = 'physics').并将返回profile存储在变量user_profile中，再打印这个变量：
+print(user_profile)
+#其实就是函数参数的方法，*代表的以元组的形式进行输入的情况，而**代表的是以字典输入的情况，并且字典要以键-值对的方式进行输出才行，
+# **代表创建一个空的字典，把用户输入的参数传给这个空的字典。return是返回到调用函数的位置，返回生成的结果到函数调用的位置。
+
+print("\n动手试一试")
+print("8-12  三明治：编写一个函数，它接受顾客要在三明治中添加的一系列食材。这个函数只有一个形参（它收集函数调用中提供的所有食材），并打印一条消息")
+# 对顾客点的三明治进行概述。调用这个函数三次，每次都提供不同数量的实参。
+def make_sandwich(*toppings):
+    print("\nMaking sandwich with the following toppings: ")
+    for topping in toppings:
+        print(topping)
+make_sandwich("rice")
+make_sandwich("wirte",'milk','pepperoni')
+
+def car(manufacturer,model,**other_message):
+    all_car = {}
+    all_car["manufacturer"] = manufacturer
+    all_car["model"] = model
+    for key, value in other_message.items():
+        all_car[key] = value
+    return all_car
+new_car = car("china","big",city= "biejing",much= 100)
+print(new_car)
+
