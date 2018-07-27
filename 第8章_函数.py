@@ -50,7 +50,7 @@ def describe_pet(animal_type,pet_name):
     print("My " + animal_type + "'s name is " + pet_name.title() + ".")
 describe_pet('harry','hamster') #由于实参'harry'在前，这个值将存储到animal_type中，因而结果跟上面的相反
 
-print("\n8.2.2 ")
+print("\n8.2.2 关键字实参 ")
 #关键字实参是传递给函数的名称-值对。我们直接在实参中将名称和值关联起来了，因此向函数传递实参时不会混淆(不会得到名为
 #Hamster的Harry这样的结果).关键字实参让我们无须考虑函数调用中的实参顺序，还清楚地指出了函数调用中的各个值的用途。如：
 def describe_pets(animal_type,pet_name):  #使用关键字实参来调用describe_pet():
@@ -156,7 +156,7 @@ print(musician)
 
 #我们可以轻松地扩展这个函数，使其接受可选值，如中间名、年龄、职业或我们要存储的其他信息。例如，修改让我们还能存储年龄：
 def build_person(first_name,last_name,age=""):
-    person = {"first":"first_name","last":"last_name"}
+    person = {"first":first_name,"last":last_name}
     if age:
         person["age"] = age
     return person
@@ -217,13 +217,53 @@ def greet_users(names):
     for name in names:
         msg = "Hello, " + name.title() + "!"
         print(msg)
-usernames = ['zengmingzhu','gengchangxue','linzhiling','zhaobenshan']
-greet_users(usernames)
+username = ['zengmingzhu','gengchangxue','linzhiling','zhaobenshan']
+greet_users(username)
 
 print("\n8.4.1 在函数中修改列表") #？？
 #将列表传递给函数后，函数就可对其进行修改。在函数中对这个列表所做的任何修改都是永久性的，这让我们能够高效地处理大量的数据。
 #来看一家为用户提交的设计制作3D打印模型的公司。需要打印的设计存储在一个列表中，打印后移到另一个列表中。
 #下面是在不使用函数的情况下模拟这个过程的代码：
+#首先创建一个列表，其中包含一些要打印的设计
+unprinted_designs = ['iphone case','robot pandant','dodecahedron']
+completed_models = []
+#模拟打印每个设计，直到没有为打印的设计为止
+#打印每个设计后，都将其转移到累彪completed_models中
+while unprinted_designs:
+    current_design = unprinted_designs.pop()
+    completed_models.append(current_design)
+ # 模拟根据设计制作3D打印模型的过程
+    print("Printing model: " + current_design)
+    completed_models.append(current_design)
+#显示打印好的所有模型
+print("\nThe following models have been printed: ")
+for completed_model in completed_models:
+    print(completed_model)
+
+print("===========")
+#为重新组织这些代码，我们可编写两个函数，每个都做一件具体的工作。大部分代码都与原来相同，只是效率更高。
+#每一个函数将负责处理打印设计的工作，而第二个将概述打印了哪些设计：
+def print_models(unprinted_designs,completed_models):  #模拟打印的每个设计，直到没有打印的设计为止。
+       while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print("Printing model: " + current_design)  #模拟根据设计制作3D打印模型的过程
+        completed_models.append(current_design)     #打印每个设计后，都将其转移到列表completed_models中
+
+def show_completed_models(completed_models):
+    print("\nThe following models have been printed: ")
+    for completed_model in completed_models:
+        print(completed_model)
+
+unprinted_designs = ['inpone case','robot pendant','dodecahedron']
+completed_models = []
+
+print_models(unprinted_designs,completed_models)
+show_completed_models(completed_models)
+#我们定义了函数print_models()，它包含两个形参：一个需要打印的设计列表和一个打印好的模型列表。给定这两个列表，这个函数模拟打印每个
+#设计的过程：将设计逐个地从未打印的设计列表中取出，并加入到打印好的模型列表中。我们定义了函数show_completed_models(),它包含一个形参：打印好
+#的模型列表。给定这个列表，函数show_completed_models()显示打印出来的每个模型名称。
+#这个程序的输出与未使用函数的版本相同，但组织更为有序。完成大部分工作的代码都移到了两个函数中，让主程序更容易理解。只要看看程序，我们就
+#知道这个程序的功能容易看请的多：
 
 print("\n8.4.2 禁止函数修改列表")  #？？
 print("\8.5 传递任意数量的实参")   #Python允许函数从调用语句中收集任意数量的实参。
@@ -279,6 +319,8 @@ def make_sandwich(*toppings):
 make_sandwich("rice")
 make_sandwich("wirte",'milk','pepperoni')
 
+print("8-14  汽车：编写一个函数，将一辆汽车的信息存储在一个字典中，这个函数总是接受制造商和型号，还接受任意数量的关键字是实参。这样调用这个函数：")
+print("提供必不可少的信息，以及两个名称-值对，如颜色和选装配件。")
 def car(manufacturer,model,**other_message):
     all_car = {}
     all_car["manufacturer"] = manufacturer
@@ -288,4 +330,23 @@ def car(manufacturer,model,**other_message):
     return all_car
 new_car = car("china","big",city= "biejing",much= 100)
 print(new_car)
+
+print("\n8.6 将函数存储在模块中")
+#将函数存储在被称为模块的独立文件中，再将模块导入到主程序中。import语句允许在当前运行的程序文件中使用模块中的代码。
+#过将函数存储在独立的文件中，可隐藏程序代码的细节，将重点放在程序的高层逻辑上。这还能让我们在众多不同的程序中重用函数。
+#将函数存储在独立文件中后，可与其他程序员共享这写文件而不是整个程序。知道如何导入函数还能让我们使用其他程序员编写的函数库。
+
+print("\n8.6.1  导入整个模块")
+#要让函数是可导入的，得先创建模块。模块的扩展名为.py的文件，包含要导入到程序中的代码。下面来创建一个包含函数make_pizza()的模块。
+# 为此，我们将文件pizza.py中除函数make_pizza()之外的其他代码都删除：
+def make_pizza(*toppings):
+    """打印顾客点的所有配料"""
+    print("\nMaking a pizza with the following toppings: ")
+    for topping in toppings:
+        print(topping)
+#接下来，我们在pizza.py所在的目录中创建另一个名为making_pizzas.py的文件，这个文件导入刚创建的模块，在调用make_pizza()两次：
+    import make_pizzal
+pizza1.make_pizza(16,"mushrooms")
+pizza1.make_pizza(32,"pepperoni","mushrooms","green peppers")
+
 
