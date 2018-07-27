@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/第5章_if语句.py" description="list = [&quot;selina&quot;, &quot;sue&quot;, &quot;admin&quot;, &quot;candy&quot;, &quot;fafa&quot;]..." line="359" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86aebf3a-826b-4bb2-b816-07d8471ceeda" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/making_pizzas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizza.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/第3章_列表简介.py" beforeDir="false" afterPath="$PROJECT_DIR$/第3章_列表简介.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/第8章_函数.py" beforeDir="false" afterPath="$PROJECT_DIR$/第8章_函数.py" afterDir="false" />
-    </list>
+    <list default="true" id="86aebf3a-826b-4bb2-b816-07d8471ceeda" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +21,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="第4章_操作列表.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="第4章_操作列表.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/第4章_操作列表.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="325">
@@ -36,7 +30,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="第3章_列表简介.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="第3章_列表简介.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/第3章_列表简介.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
@@ -57,8 +51,8 @@
       <file leaf-file-name="第5章_if语句.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/第5章_if语句.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="345" column="66" selection-start-line="345" selection-start-column="66" selection-end-line="345" selection-end-column="66" />
+            <state relative-caret-position="366">
+              <caret line="343" column="18" lean-forward="true" selection-start-line="343" selection-start-column="18" selection-end-line="343" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -84,8 +78,8 @@
       <file leaf-file-name="第8章_函数.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/第8章_函数.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="347" selection-start-line="347" selection-end-line="349" selection-end-column="61" />
+            <state relative-caret-position="322">
+              <caret line="345" column="22" lean-forward="true" selection-start-line="345" selection-start-column="22" selection-end-line="345" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -162,8 +156,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="28" />
-    <option name="y" value="101" />
+    <option name="x" value="163" />
+    <option name="y" value="118" />
     <option name="width" value="1463" />
     <option name="height" value="847" />
   </component>
@@ -191,7 +185,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.making_pizzas">
+  <component name="RunManager" selected="Python.复习">
     <configuration name="第七章 用户输入和while语句" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PyTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -206,6 +200,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/第七章 用户输入和while语句.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="复习" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PyTest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/复习.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -244,24 +257,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/第8章_函数.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="复习" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PyTest" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/复习.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -306,15 +301,14 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
+      <item itemvalue="Python.复习" />
       <item itemvalue="Python.第6章_字典" />
       <item itemvalue="Python.第七章 用户输入和while语句" />
       <item itemvalue="Python.第8章_函数" />
       <item itemvalue="Python.pizza" />
-      <item itemvalue="Python.making_pizzas" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.making_pizzas" />
         <item itemvalue="Python.pizza" />
         <item itemvalue="Python.第8章_函数" />
         <item itemvalue="Python.第七章 用户输入和while语句" />
@@ -417,19 +411,25 @@
       <option name="project" value="LOCAL" />
       <updated>1532598474512</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="函数">
+      <created>1532685671690</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1532685671690</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="28" y="101" width="1463" height="847" extended-state="0" />
-    <editor active="true" />
+    <frame x="163" y="118" width="1463" height="847" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.28275108" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2678822" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2678822" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.15" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
@@ -530,12 +530,12 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/第七章 用户输入和while语句.py</url>
+          <url />
           <line>148</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/第七章 用户输入和while语句.py</url>
+          <url />
           <line>160</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -813,24 +813,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第5章_if语句.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="345" column="66" selection-start-line="345" selection-start-column="66" selection-end-line="345" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/复习.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/第8章_函数.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="347" selection-start-line="347" selection-end-line="349" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -848,10 +834,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第4章_操作列表.py">
+    <entry file="file://$PROJECT_DIR$/第3章_列表简介.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="425">
+          <caret line="97" column="43" lean-forward="true" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第5章_if语句.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="343" column="18" lean-forward="true" selection-start-line="343" selection-start-column="18" selection-end-line="343" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -862,10 +855,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第3章_列表简介.py">
+    <entry file="file://$PROJECT_DIR$/第8章_函数.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="97" column="43" lean-forward="true" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
+        <state relative-caret-position="322">
+          <caret line="345" column="22" lean-forward="true" selection-start-line="345" selection-start-column="22" selection-end-line="345" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第4章_操作列表.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
