@@ -82,6 +82,7 @@ while current_number <= 5:
 #因此Python打印2，并将current_number加1，使其为3，一次类推。一旦current_number大于5，循环将停止，整个程序也将到此结束：
 
 print("\n7.2.2 让用户选择何时退出")
+print("\n7.2.3 使用标志")
 print("\n7.2.4  使用break退出循环")
 #要立即退出while循环，不再运行循环中余下的代码，也不管条件测试的结果如何，可使用break语句。break语句用于控制程序流程，
 #可使用它来控制哪些代码行将执行，哪些代码行不执行，从而让程序按我们的要求执行要执行的代码。
@@ -99,11 +100,11 @@ print("\n7.2.5  在循环中使用continue") #??
 #要返回到循环开头，并根据条件测试结果决定是否继续执行循环，可使用continue语句，它不像break语句那样不再执行余下的代码
 # 并退出整个循环。例如来看一个从1数到10，但只打印其中奇数的循环：
 current_number = 0
-while current_number < 10:
+while current_number < 10 :
     current_number += 1
     if current_number % 2 == 0:
         continue
-print(current_number)
+    print(current_number)
 #们首先将current_number设置成了0，由于它小于10，Python进入while循环。进入循环后，我们以步长1的方式往上数，因此current_number为1，接下
 #来，if语句检查current_number与2的求模运算结果。如果结果为0(意味着current_number可能被2整除),就执行continue语句，让Python忽略余下的代码，
 # 并返回到循环的开头。如果当前的数字不能被2整除，就执行循环中余下的代码，Python将这个数字打印出来。

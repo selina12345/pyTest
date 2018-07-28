@@ -71,3 +71,33 @@ print(sum(count))
 theList = ["a", "b", "c"]
 ll="d" not in theList
 print(ll)
+
+print("--")
+current_number = 0
+while current_number < 10 :
+    current_number += 1
+    if current_number % 2 == 0:
+        continue
+    print(current_number)
+
+print("=-")
+current_number = 0
+while current_number < 10 :
+    if current_number == 5:
+        current_number += 1
+        continue
+    print(current_number)
+    current_number += 1
+
+#0-100偶数求和
+i = 0
+r = 0
+while i < 100:
+    i += 1
+    if i % 2 == 0:
+     r += i
+print(r)
+print("0-100偶数求和 = %d " % r)
+
+
+
