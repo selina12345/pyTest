@@ -118,6 +118,7 @@ you_dog.roll_over()
 
 print("\n动手试一试")
 
+
 # 9-1 餐馆：创建一个名为Restaurant的类，其方法__init__()设置两个属性：restaurant_name和cuisine_type.创建一个名为describe_restaurant()
 # 的方法和一个名为open_restaurant()的方法，其中前者打印前述两项信息，而后者打印一条消息，指出餐馆正在营业。
 class Restaurant():
@@ -132,6 +133,7 @@ class Restaurant():
     def open_restaurant(self):
         print("This restaurant is open for business.")
 
+
 my_restanrant = Restaurant("Xiao_LI_Restaurant", "west_food")
 print("The restaurant's name is " + my_restanrant.restaurant_name.title() + ".")
 print("The restaurant is good at " + my_restanrant.cuisine_type + ".")
@@ -139,37 +141,224 @@ print("The restaurant is good at " + my_restanrant.cuisine_type + ".")
 my_restanrant.describe_restaurant()
 my_restanrant.open_restaurant()
 
-
 print("====")
+
+
 #  9-3 用户：创建一个名为User的类，其中包含属性first_name和last_name，还有用户简介通常会存储的其他几个属性。
 # 在User中定义一个名为describe_user()的方法，它打印用户信息摘要；再定义一个名为greet_user()的方法，它向用户发出个性化的问候。
 #  创建多个表示不同用户的实例，并对每个实例都调用上述方法。
 class User():
-    def __init__(self,first_name, last_name, age,country):
+    def __init__(self, first_name, last_name, age, country):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
         self.country = country
 
     def describe_user(self):
-        print(self.first_name.title())
-        print(self.last_name.title())
-        print(self.age)
-        print(self.country.title())
+        print("Hello," + self.first_name.title() + self.last_name.title() + " ,")
 
     def greet_user(self):
-        print("Hello, Nice to meet you " )
+        print("Nice to meet you! ")
 
-user_1 = User("li ","zhi_xin",18,"china")
-user_2 = User("yang ","zhi_xin",22,"india")
+
+user_1 = User("li ", "zhi_xin", 18, "china")
+user_2 = User("yang ", "zhi_xin", 22, "india")
 
 user_1.describe_user()
+user_1.greet_user()
+print("My name is " + user_2.first_name.title() + user_1.last_name.title() + " I am " + str(
+    user_1.age) + ", I come from " + user_1.country.title())
+print("\n")
+
+user_2.describe_user()
 user_2.greet_user()
+print("My name is " + user_1.first_name.title() + user_2.last_name.title() + " I am " + str(
+    user_2.age) + ", I come from " + user_2.country.title())
 
-print("\nMy name is " + user_1.first_name.title() + user_1.last_name.title() + " I am " + str(user_1.age) + ", I come from "  + user_1.country.title())
-print("My name is " + user_2.first_name.title() + user_2.last_name.title() + " I am " + str(user_2.age) + ", I come from "  + user_2.country.title())
+print("\n9.2 使用类和实例")
+# 们可以使用类来模拟现实世界中很多情景。类编写好后，我们的大部分时间都将花在使用根据类创建的实例上。
+# 我们需要执行的一个重要任务就是修改实例的属性。我们可以直接修改实例的属性，也可以编写方法以特定的方式进行修改。
+print("9.2.1 Car类")
 
 
+# 下面来编写一个表示汽车的类，它存储了有关汽车的信息，还有一个汇总这些信息的方法：
+class Car():
+    """一次模拟汽车的简单尝试"""
 
+    def __init__(self, make, model, year):
+        """初始化描述汽车的属性"""
+        self.make = make
+        self.model = model
+        self.year = year
 
+    def et_descriptive_name(self):
+        '''返回整洁的描述性信息'''
+        long_name = str(self.year) + " " + self.make + " " + self.model
+        return long_name
 
+my_new_car = Car('audi', 'a4', 2016)
+print(my_new_car.et_descriptive_name())
+
+print("\n9.2.2 给属性指定默认值")
+# 类中的每个属性都必须有初始值，哪怕这个值是0或空字符串。在有些情况下，如设置默认值时，
+# 在方法__init__()内指定这种初始值是可行的；如果我们对某个属性这样做了，就无需包含为它提供初始值的形参。
+class Car():
+    """一次模拟汽车的简单尝试"""
+    def __init__(self,make,model,year):
+        """初始化描述汽车的属性"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        """返回整洁的描述性信息"""
+        long_name = str(self.year) + ' ' + self.make + " " + self.model
+        return long_name.title()
+
+    def read_odometer(self):
+        '''打印一条指出汽车里程的消息'''
+        print("This car has " + str(self.odometer_reading) + " miles on it.")
+
+my_new_car = Car('audi','a4',2016)
+print(my_new_car.get_descriptive_name())
+my_new_car.read_odometer()
+# 现在，当Python调用方法__init__()来创建新实例时，将像前一个示例一样以属性的方式存储制造商、型号和生产年份。接下来，Python将创建一个名为
+# odometer_reading的属性，并将其初始值设置为0.在2处，我们还定义了一个名为read_odometer()的方法，它让我们能够轻松地获悉汽车的里程。
+
+print("\n9.2.3 修改属性的值")
+print("1.直接修改属性的值") #要修改属性的值，最简单的方式是通过实例直接访问它。下面的代码直接将里程表读数设置为23：
+class Car():
+    """一次模拟汽车的简单尝试"""
+    def __init__(self,make,model,year):
+        """初始化描述汽车的属性"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        """返回整洁的描述性信息"""
+        long_name = str(self.year) + ' ' + self.make + " " + self.model
+        return long_name.title()
+
+    def read_odometer(self):
+        """打印一条指出汽车里程的消息"""
+        print("This car has " + str(self.odometer_reading) + " miles on it.")
+
+my_new_car = Car('audi','a4',2016)
+print(my_new_car.get_descriptive_name())
+
+my_new_car.odometer_reading = 23     #使用句点表示法来直接访问并设置汽车的属性odometer_reading。
+my_new_car.read_odometer()
+
+print("2.通过方法修改属性的值")
+#如果有替我们更新属性的方法，将大有裨益。这样，我们就无需直接访问属性，而可将值传递给一个方法，由它在内部进行更新。
+#下面的示例演示了一个名为update_odometer()的方法：
+class Car():
+    """一次模拟汽车的简单尝试"""
+    def __init__(self, make, model, year):
+        """初始化描述汽车的属性"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        """返回整洁的描述性信息"""
+        long_name = str(self.year) + " " + self.make + " " + self.model
+        return long_name.title()
+
+    def update_odometer(self, mileage):   #(1)
+        self.odometer_reading = mileage
+
+    def read_odometer(self):
+        """打印一条指出汽车里程的消息"""
+        print("This car has " + str(self.odometer_reading) + " miles on it.")
+
+my_new_car = Car('audi','a4',2016)
+print(my_new_car.get_descriptive_name())
+
+my_new_car.update_odometer(23)  #(2)
+my_new_car.read_odometer()
+
+# 对Car类所做的唯一修改是在（1）处添加了方法update_odometer()。这个方法接受一个里程值，并将其存储到self.odometer_reading中。
+# 在（2）处，我们调用了update_odometer()，并向它提供了实参23（该实例对应于方法定义中的形参mileage)。它将里程表读数设置为23；
+print("=====")
+# 可对方法update_odometer()进行扩展，使其在修改里程表读数时做些额外的工作。下面来添加一些逻辑，禁止任何人将里程表的读数往回调：
+class Car():
+    """一次模拟汽车的简单尝试"""
+    def __init__(self,make,model,year):
+        """初始化描述汽车的属性"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 40
+
+    def get_descriptive_name(self):
+        '''返回整洁的描述性信息'''
+        long_name = str(self.year) + ' ' + self.make + " " + self.model
+        return long_name.title()
+
+    def update_odometer(self, mileage):
+        #将里程表读数设置为指定的值
+        #禁止将里程表读数往回调
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back on odometer!")
+
+    def read_odometer(self):
+        """打印一条指出汽车里程的消息"""
+        print("This car has " + str(self.odometer_reading) + " miles on it.")
+
+my_new_car = Car('audi','a4',2016)
+print(my_new_car.get_descriptive_name())
+
+my_new_car.update_odometer(23)
+my_new_car.read_odometer()
+# 运行结果如下：
+# 2016 Audi A4
+# You can't roll back on odometer!
+# This car has 40 miles on it.
+# 现在，update_odometer()在修改属性前检查指定的读数是否合理。如果新指定的里程(mileage)大于或等于原来的里程(self.odometer_reading)，
+# 就将里程表读数改为新指定的里程；否则就发出警告，指出不能往里程表往回调。
+
+print("\n3.通过方法对属性的值进行递增")
+# 有时候需要将属性值递增特定的量，而不是将其设置为全新的值。假设我们购买了一辆二手车，且从购买到登记前增加了100英里的里程，
+# 下面的方法让我们能够传递这个增量，并相应地增加里程表读数：
+class Car():
+    """一次模拟汽车的简单尝试"""
+    def __init__(self,make,model,year):
+        """初始化描述汽车的属性"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        """回整洁的描述性信息"""
+        long_name = str(self.year) + ' ' + self.make + " " + self.model
+        return long_name.title()
+
+    def update_odometer(self,mileage):
+        """更新汽车里程表"""
+        self.odometer_reading = mileage
+
+    def increment_odometer(self, mileage):
+        """将里程表读数增加指定的量"""
+        self.odometer_reading += mileage
+
+    def read_odometer(self):
+        """打印一条指出汽车里程的消息"""
+        print("This car has " + str(self.odometer_reading) + " miles on it.")
+
+my_used_car = Car("subaru",'outback',2013)
+print(my_used_car.get_descriptive_name())
+
+my_used_car.update_odometer(23500)
+my_used_car.read_odometer()
+
+my_used_car.increment_odometer(100)
+my_used_car.read_odometer()
+# 我们可以轻松地修改这个方法，以禁止增量为负值，从而防止有人利用它来回拨里程表。
