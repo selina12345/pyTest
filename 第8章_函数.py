@@ -4,20 +4,14 @@ print("8.1定义函数")  # 用def 定义函数或方法
 # 如:下面是一个打印问候语的简单函数，名为greet_user():
 def greet_user():
     print("Hello!")
-
-
 greet_user()
 
 print("\n8.1.1 向函数体传递信息")
-
-
 # 只要稍作修改，就可以让函数greet_user()不仅向用户显示Hello！，还将用户的名字用作抬头。为此，可在函数定义def greet_user()
 # 的括号内添加username。通过在这里添加username，就可让函数接受我们给username制定的任何值。现在，这个函数要求我们调用
 # 它给username指定一个值。调用greet_user()时，可将一个名字传递给它，如下所示：
 def greet_user(username):
     print("Hello, " + username)
-
-
 greet_user("Selina.")  # 调用函数greet_user("Selina."),并向它提供执行print语句所需的信息。这个函数接受我们传递给它的名字，
 # 并向这个人发出问候：Hello, Selina.,我们可以根据需要调用函数greet_user()任意次.
 
@@ -39,9 +33,7 @@ def describe_pet(animal_type, pet_name):
     print("\nI have a " + animal_type + ".")
     print("My " + animal_type + "'s name is " + pet_name.title() + ".")
 
-
 describe_pet('hamster', 'harry')
-
 
 # 这个函数的定义表明，它需要一种动物类型和一个名字。调用describe_pet()时，需要按顺序提供一种动物类型和一个名字。例如，
 # 在前面的函数调用中，实参'hamster'存储在形参animal_type中，而实参'harry'存储在形参pet_name中。在函数体内，
@@ -54,10 +46,8 @@ def describe_pet(animal_type, pet_name):
     print("\nI have a " + animal_type + ".")
     print("My " + animal_type + "'s name is " + pet_name.title() + ".")
 
-
 describe_pet('hamster', 'harry')
 describe_pet("dog", "willie")
-
 
 # 每当需要描述新宠物时，都可调用这个函数,只需使用一行调用函数的代码，就可描述一个新宠物。
 # 在函数中，可根据需要使用任意数量的位置实参，Python将按 顺序 将函数调用中的实参关联到函数定义中相应的形参。
@@ -67,11 +57,9 @@ def describe_pet(animal_type, pet_name):
     print("\nI have a " + animal_type + ".")
     print("My " + animal_type + "'s name is " + pet_name.title() + ".")
 
-
 describe_pet('harry', 'hamster')  # 由于实参'harry'在前，这个值将存储到animal_type中，因而结果跟上面的相反
 
 print("\n8.2.2 关键字实参 ")
-
 
 # 关键字实参是传递给函数的名称-值对。我们直接在实参中将名称和值关联起来了，因此向函数传递实参时不会混淆(不会得到名为
 # Hamster的Harry这样的结果).关键字实参让我们无须考虑函数调用中的实参顺序，还清楚地指出了函数调用中的各个值的用途。如：
@@ -79,11 +67,9 @@ def describe_pets(animal_type, pet_name):  # 使用关键字实参来调用descr
     print("\nI have a " + animal_type.title() + ".")
     print("My pet " + animal_type.title() + "'s name is " + pet_name.title() + ".")
 
-
 describe_pets(pet_name='harry', animal_type='hamster')  # 无需考虑实参顺序，使用关键字对应
 
 print("\n8.2.3 默认值")
-
 
 # 编写函数时，可给每个形参指定默认值。在调用函数中给形参提供了实参时，Python将使用制定的实参值；否则，将使用形参的默认值。
 # 因此,给形参指定默认值后，可在函数调用中省略相应的实参。使用默认值可简化函数调用，还可清楚地指出函数的典型用法。
@@ -93,7 +79,6 @@ def describe_pet(pet_name, animal_type='dog'):
     print('\nI have a ' + animal_type.title() + '.')
     print("My " + animal_type + "'s name is " + pet_name + ".")
 
-
 describe_pet("Harry")  # 省略animal_type默认的实参dog
 
 print("\n如果要描述的动物不是小狗，可使用类似于下面的函数说明：")
@@ -102,7 +87,6 @@ print("\n如果要描述的动物不是小狗，可使用类似于下面的函�
 def describe_pet(pet_name, animal_type='dog'):
     print('\nI have a ' + animal_type.title() + '.')
     print("My " + animal_type + "'s name is " + pet_name + ".")
-
 
 describe_pet(animal_type="haster", pet_name="Harry")
 describe_pet(pet_name="Harry", animal_type="Haster")
@@ -118,24 +102,18 @@ print("\n8.2.5 避免实参错误")
 
 print("\n动手试一试")
 print("8-3 T恤")
-
-
 def make_shirt(Size, Typeface):
     print("\nI need a " + Size + " T-shirt.")
     print("The word " + Typeface + " is printed on this T-shirt.")
 
-
 make_shirt("S", "Just do it")
 
 print("8-4 大号T恤")
-
-
 # 修改函数make_shirt()，使其在默认情况下制作印有字样'I love Python'的大号T恤。
 # 调用这个函数来制作如下T恤:一件印有默认字样的大号T恤、一件印有默认字样的中号T恤和一件印有其他字样的T恤(尺码无关紧要)。
 def make_shirt(Size, Typeface="love Python"):
     print("\nI need a " + Size + " T-shirt.")
     print("The word " + Typeface + " is printed on this T-shirt.")
-
 
 make_shirt("")
 make_shirt("L")
@@ -144,14 +122,10 @@ make_shirt(Size="M", Typeface="I am happy")
 make_shirt(Typeface="I am happy", Size="M")
 
 print("\n8-5 城市")
-
-
 # 编写一个名为describe_city()的函数，它接受一座城市的名字以及该城市所属的国家。这个函数应打印一个简单的句子，如
 # Reykjavik is in Iceland.给用于存储国家的形参指定默认值。为三座不同的城市调用这个函数，且其中至少有一座城市不属于默认国家
 def scribe_city(city, country="china"):
     print(city + " is in " + country.title() + ".")
-
-
 scribe_city("Beijing")
 scribe_city(city="shenzheng")
 scribe_city(city="yongzhou")
@@ -162,21 +136,15 @@ print("\n8.3 返回值")
 # 可使用return语句将值返回到调用函数的代码行。返回值让我们能够将程序的大部分繁重工作移到函数中去完成，从而简化主程序。
 
 print("\n8.3.1 返回简单值")
-
-
 # 这一个函数，它接受名和姓并返回整洁的姓名：
 def get_formatted_name(first_name, last_name):
     full_name = first_name + " " + last_name
     return full_name.title()
-
-
 musician = get_formatted_name('jimi', 'hendrix')
 print(musician)
 # 调用返回值的函数时，需要提供一个变量，用于存储返回的值。这里将返回值存储在了变量musician中。输出为整洁的姓名：Jimi Hendrix
 
 print("\n8.3.2 让实参编程可选的")
-
-
 # 有时候，需要让实参变成可选的，这样使用函数的人就只需在必要时才提供额外的信息。可使用默认值来让实参变成可选的。
 # 例如，假设我们要扩展函数get_formatted_name()，使其处理中间名，为此，可将其修改成类似与下面这样：
 def get_formatted_name(first_name, last_name, middle_name=""):
@@ -185,7 +153,6 @@ def get_formatted_name(first_name, last_name, middle_name=""):
     else:
         full_name = first_name + " " + last_name
     return full_name.title()
-
 
 musician = get_formatted_name('jimi', 'hendrix')
 print(musician)
@@ -199,16 +166,13 @@ print(musician)
 
 print("\n8.3.3 返回字典")
 
-
 # 函数可返回任何类型的值，包括列表和字典等较复杂的数据结构。例如，下面的函数接受姓名的组成部分，并返回一个表示人的字典：
 def build_person(first_name, last_name):
     person = {"first": first_name, "last": last_name}  # 返回一个字典，其中包含有关一个人的信息
     return person
 
-
 musician = build_person("jimi", 'hendrix')
 print(musician)
-
 
 # 我们可以轻松地扩展这个函数，使其接受可选值，如中间名、年龄、职业或我们要存储的其他信息。例如，修改让我们还能存储年龄：
 def build_person(first_name, last_name, age=""):
@@ -216,8 +180,6 @@ def build_person(first_name, last_name, age=""):
     if age:
         person["age"] = age
     return person
-
-
 musician = build_person("jimi", "hendrix", "18")
 print(musician)  # 我们新增了一个可选形参age，其默认值设置为空字符串。如果函数调用中包含这形参的值，这个值将存储到字典中。
 
@@ -249,21 +211,16 @@ print("\n动手试一试")
 # 8-6 城市名： 编写一个名为city_country()的函数，它接受城市的名称及其所属的国家。这个函数应返回一个格式类似于下面这样的字符串：
 def city_country(city, country):
     print(city.title() + "," + country.title())
-
-
 city_country("shenzheng", "china")
 city_country("Mumbai", "Idia")
 
 print("\n8-7 专辑：编写一个名为make_album()的函数，创建一个描述音乐专辑的字典。这个函数应接受歌手名字和专辑名，并返回一个包含")
-
-
 # 这两项信息的字典。使用这个函数创建三个表示不同专辑的字典，并打印每个返回值，以核实字典正确地存储了专辑的信息。")
 def make_album(singer_name, album_name, songs=0):
     Music_album = {"singer_name": singer_name, "album_name": album_name}
     if songs > 0:
         Music_album["songs"] = songs
     return Music_album
-
 
 new_album = make_album("zhaolei", "chengdou", 1)
 print(new_album)
@@ -274,8 +231,6 @@ print(new_album)
 # 否则，就必须输出这个函数。
 
 print("\n8.4 传递列表")
-
-
 # 我们经常会发现，向函数传递列表很有用，这种列表包含的可能是名字，数字或更复杂的对象(如字典)。将列表传递给函数后，
 # 函数就能直接访问其内容。下面使用函数来提高处理列表的效率。
 # 假设有一个用户列表，我们要问候其中的每位用户。下面的示例将一个名字列表传递给一个名为greet_users()的函数，这个函数问候列表中的每个人：
@@ -283,7 +238,6 @@ def greet_users(names):
     for name in names:
         msg = "Hello, " + name.title() + "!"
         print(msg)
-
 
 username = ['zengmingzhu', 'gengchangxue', 'linzhiling', 'zhaobenshan']
 greet_users(username)
@@ -309,8 +263,6 @@ for completed_model in completed_models:
     print(completed_model)
 
 print("===========")
-
-
 # 为重新组织这些代码，我们可编写两个函数，每个都做一件具体的工作。大部分代码都与原来相同，只是效率更高。
 # 每一个函数将负责处理打印设计的工作，而第二个将概述打印了哪些设计：
 def print_models(unprinted_designs, completed_models):  # 模拟打印的每个设计，直到没有打印的设计为止。
@@ -319,12 +271,10 @@ def print_models(unprinted_designs, completed_models):  # 模拟打印的每个�
         print("Printing model: " + current_design)  # 模拟根据设计制作3D打印模型的过程
         completed_models.append(current_design)  # 打印每个设计后，都将其转移到列表completed_models中
 
-
 def show_completed_models(completed_models):
     print("\nThe following models have been printed: ")
     for completed_model in completed_models:
         print(completed_model)
-
 
 unprinted_designs = ['inpone case', 'robot pendant', 'dodecahedron']
 completed_models = []
@@ -340,28 +290,23 @@ show_completed_models(completed_models)
 print("\n8.4.2 禁止函数修改列表")  # ？？
 print("\8.5 传递任意数量的实参")  # Python允许函数从调用语句中收集任意数量的实参。
 
-
 def make_pizza(*toppings):
     print(toppings)
-
 
 make_pizza('pepperoni')
 make_pizza('mushrooms', 'green peppers', 'extra cheese')
 
 print("\n我们可以将这条print语句替换为一个循环，对配料列表进行遍历，并对顾客点的比萨进行描述：")
 
-
 def make_pizza(*toppings):  # 形参名*toppings中的星号让Python创建一个名为toppings的空元组，并将收到的所有值都封装到这个元祖中
     print("\nMaking a pizza with the following toppings：")
     for topping in toppings:
         print(topping)
 
-
 make_pizza("pepperoni")
 make_pizza("mushrooms", "green peppers", "extra cheese")
 
 print("\n8.5.1 结合使用位置实参和任意数量实参")
-
 
 # 如果要让函数接受不同类型的实参，必须在函数定义中将接纳任意数量实参的形参放在最后。Python先匹配位置实参和关键字实参，
 # 再将余下的实参都收集到最后一个形参中。
@@ -371,13 +316,11 @@ def make_pizza(size, *toppings):
     for topping in toppings:
         print(topping)
 
-
 make_pizza("5inch", "pepperoni")
 make_pizza(7, "mushrooms", "green peppers", "extra cheese")
-# ython将收到的第一个值存储在形参size中，并将其他的所有值都存储在元组toppings中。在函数调用中，首先指定表示比萨的尺寸的实参，然后根据需要制定任意数量的配料：
+# python将收到的第一个值存储在形参size中，并将其他的所有值都存储在元组toppings中。在函数调用中，首先指定表示比萨的尺寸的实参，然后根据需要制定任意数量的配料：
 
 print("\n8.5.2  使用任意数量的关键字实参")
-
 
 # 需接受任意数量的实参，但预先不知道传递给函数的会是什么样的信息。在这种情况下，可将函数编写成能够接受任意数量的键-值对——
 # 调用语句提供了多少就接受多少。一个这样的示例是创建用户简介：我们知道我们将收到有关用户的信息，但不确定会是什么样的信息。
@@ -390,7 +333,6 @@ def build_profile(first, last, **user_info):
         profile[key] = value  # 遍历字典user_info中的键-值对，并将每个键-值对都加入到字典profile中
     return profile  # 我们将字典profile返回给函数调用行。
 
-
 user_profile = build_profile("albert", "einstein", location="princeton", field="physics")
 # 调用build_profile(),向它传递名'albert'、姓('einstein')和两个键-值对(location = 'princeton'和field = 'physics').并将返回profile存储在变量user_profile中，再打印这个变量：
 print(user_profile)
@@ -400,20 +342,17 @@ print(user_profile)
 print("\n动手试一试")
 print("8-12  三明治：编写一个函数，它接受顾客要在三明治中添加的一系列食材。这个函数只有一个形参（它收集函数调用中提供的所有食材），并打印一条消息")
 
-
 # 对顾客点的三明治进行概述。调用这个函数三次，每次都提供不同数量的实参。
 def make_sandwich(*toppings):
     print("\nMaking sandwich with the following toppings: ")
     for topping in toppings:
         print(topping)
 
-
 make_sandwich("rice")
 make_sandwich("wirte", 'milk', 'pepperoni')
 
 print("8-14  汽车：编写一个函数，将一辆汽车的信息存储在一个字典中，这个函数总是接受制造商和型号，还接受任意数量的关键字是实参。这样调用这个函数：")
 print("提供必不可少的信息，以及两个名称-值对，如颜色和选装配件。")
-
 
 def car(manufacturer, model, **other_message):
     all_car = {}
@@ -422,7 +361,6 @@ def car(manufacturer, model, **other_message):
     for key, value in other_message.items():
         all_car[key] = value
     return all_car
-
 
 new_car = car("china", "big", city="biejing", much=100)
 print(new_car)
@@ -434,7 +372,6 @@ print("\n8.6 将函数存储在模块中")
 
 print("\n8.6.1  导入整个模块")
 
-
 # 要让函数是可导入的，得先创建模块。模块的扩展名为.py的文件，包含要导入到程序中的代码。下面来创建一个包含函数make_pizza()的模块。
 # 为此，我们将文件pizza.py中除函数make_pizza()之外的其他代码都删除：
 def make_pizza(*toppings):
@@ -444,7 +381,6 @@ def make_pizza(*toppings):
         print(topping)
     # 接下来，我们在pizza.py所在的目录中创建另一个名为making_pizzas.py的文件，这个文件导入刚创建的模块，在调用make_pizza()两次：
     import make_pizzal
-
 
 pizza1.make_pizza(16, "mushrooms")
 pizza1.make_pizza(32, "pepperoni", "mushrooms", "green peppers")
