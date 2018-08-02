@@ -636,11 +636,14 @@ class Restaurant():
 class IceCreamStand(Restaurant):
     def __init__(self, restaurant_name, cuisine_type):
         super().__init__(restaurant_name, cuisine_type)
-        self.flavors = "chocolates"
+        flavors = ['vanilla', 'coffee', 'blueberry', 'chocolates', 'green tea']
+        self.flavors = flavors
 
     def describe_icecream(self):
-        print("The icecream tastes:" + self.flavors)
-        print("My favorite ice cream flavor is " + self.flavors)
+        print("The icecream tastes: ")
+        for flavor in self.flavors:
+            print(" --" + flavor)
+
 
 my_restanrant = IceCreamStand("Xiao_LI_Restaurant", "west_food", )
 print("The restaurant's name is " + my_restanrant.restaurant_name.title() + ".")
@@ -649,3 +652,55 @@ print("The restaurant is good at " + my_restanrant.cuisine_type + ".")
 my_restanrant.describe_restaurant()
 my_restanrant.open_restaurant()
 my_restanrant.describe_icecream()
+
+print("\n9.7 管理员")
+
+
+class User():
+    def __init__(self, first_name, last_name, age, country):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+        self.country = country
+
+    def describe_user(self):
+        print("Hello," + self.first_name.title() + self.last_name.title() + " ,")
+
+    def greet_user(self):
+        print("Nice to meet you! ")
+
+
+class Admin(User):
+    def __init__(self, first_name, last_name, age, country):
+        super().__init__(first_name, last_name, age, country)
+        privilegs = ["can add post", "can delete post", "can be user"]
+        self.privilegs = privilegs
+
+    def show_privilegs(self):
+        print("If you are an administrator account, you can have the following permissions: ")
+        for privileg in self.privilegs:
+            print("—" + privileg)
+
+
+all_users = Admin("li", "zhixin", 18, "china")
+all_users.describe_user()
+all_users.greet_user()
+all_users.show_privilegs()
+
+
+class Privilegs():
+    def __init__(self, privilegs):
+        self.privilegs = privilegs
+
+
+    def show_privilegs2(self):
+        print("If you are an administrator account, you can have the following permissions: ")
+
+
+class Admin2():
+    def __init__(self, privilegs):
+       self.privilegs = Privilegs(privilegs)
+
+
+privilegs2 = Admin2("can add post")
+privilegs2.privilegs.show_privilegs2()
