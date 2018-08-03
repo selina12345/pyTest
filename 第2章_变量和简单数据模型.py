@@ -135,4 +135,30 @@ if message != "quit":
     print(message)
 
 
+class User():
+    def __init__(self, first_name, last_name, age, country):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+        self.country = country
 
+    def describe_user(self):
+        print("Hello," + self.first_name.title() + self.last_name.title() + " ,")
+
+    def greet_user(self):
+        print("Nice to meet you! ")
+
+
+user_1 = User("li ", "zhi_xin", 18, "china")
+user_2 = User("yang ", "zhi_xin", 22, "india")
+
+user_1.describe_user()
+user_1.greet_user()
+print("My name is " + user_2.first_name.title() + user_1.last_name.title() + " I am " + str(
+    user_1.age) + ", I come from " + user_1.country.title())
+print("\n")
+
+user_2.describe_user()
+user_2.greet_user()
+print("My name is " + user_1.first_name.title() + user_2.last_name.title() + " I am " + str(
+    user_2.age) + ", I come from " + user_2.country.title())
