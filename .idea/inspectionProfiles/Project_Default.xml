@@ -5,6 +5,8 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="第9章_类.Admin2.privilegs" />
+          <option value="test.test.lei" />
+          <option value="test.lei" />
         </list>
       </option>
     </inspection_tool>
