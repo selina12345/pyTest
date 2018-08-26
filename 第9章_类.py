@@ -55,7 +55,7 @@ class Dog():
         print(self.name.title() + " rolled over!")
 
 
-my_dog = Dog("xiaobai", 6)  # my_dog 是结象
+my_dog = Dog("xiaobai", 6)  # my_dog 是对象
 my_dog.sit()
 my_dog.roll_over()
 print("My dog's name is " + my_dog.name.title() + ".")  # (2)
@@ -132,7 +132,6 @@ class Restaurant():
     def open_restaurant(self):
         print("This restaurant is open for business.")
 
-
 my_restanrant = Restaurant("Xiao_LI_Restaurant", "west_food")
 print("The restaurant's name is " + my_restanrant.restaurant_name.title() + ".")
 print("The restaurant is good at " + my_restanrant.cuisine_type + ".")
@@ -141,8 +140,6 @@ my_restanrant.describe_restaurant()
 my_restanrant.open_restaurant()
 
 print("====")
-
-
 #  9-3 用户：创建一个名为User的类，其中包含属性first_name和last_name，还有用户简介通常会存储的其他几个属性。
 # 在User中定义一个名为describe_user()的方法，它打印用户信息摘要；再定义一个名为greet_user()的方法，它向用户发出个性化的问候。
 #  创建多个表示不同用户的实例，并对每个实例都调用上述方法。
@@ -195,12 +192,10 @@ class Car():
         long_name = str(self.year) + " " + self.make + " " + self.model
         return long_name
 
-
 my_new_car = Car('audi', 'a4', 2016)
 print(my_new_car.et_descriptive_name())
 
 print("\n9.2.2 给属性指定默认值")
-
 
 # 类中的每个属性都必须有初始值，哪怕这个值是0或空字符串。在有些情况下，如设置默认值时，
 # 在方法__init__()内指定这种初始值是可行的；如果我们对某个属性这样做了，就无需包含为它提供初始值的形参。
@@ -232,8 +227,6 @@ my_new_car.read_odometer()
 
 print("\n9.2.3 修改属性的值")
 print("1.直接修改属性的值")  # 要修改属性的值，最简单的方式是通过实例直接访问它。下面的代码直接将里程表读数设置为23：
-
-
 class Car():
     """一次模拟汽车的简单尝试"""
 
@@ -261,8 +254,6 @@ my_new_car.odometer_reading = 23  # 使用句点表示法来直接访问并设�
 my_new_car.read_odometer()
 
 print("2.通过方法修改属性的值")
-
-
 # 如果有替我们更新属性的方法，将大有裨益。这样，我们就无需直接访问属性，而可将值传递给一个方法，由它在内部进行更新。
 # 下面的示例演示了一个名为update_odometer()的方法：
 class Car():
@@ -387,8 +378,6 @@ print("\n9.3  继承")
 # 编写类时，并非总是要从空白开始。如果我们要编写的类是另一个现成类的特殊版本，可使用继承。一个类继承另一个类时，它将自动获得另一个类的所
 # 有属性和方法；原有的类称为父类，而新类称为子类。子类继承了父类的所有属性和方法，同时还可以定义自己的属性和方法。
 print("9.3.1  子类的方法__init__()")
-
-
 #  创建子类的实例时，Python首先需要完成的任务是给父类的所有属性赋值。为此，子类的方法__init__()需要父类施以援手。
 # 例如，下面来模拟电动汽车，电动汽车是一种特殊的汽车，因此我们可以在前面创建的Car类的基础上创建新类ElectricCar，
 # 这样我们就只需为电动汽车特有的属性和行为编写代码。
@@ -431,8 +420,6 @@ name = my_tesla.get_descriptive_name()
 print(name)
 
 print("\n9.3.4 重写父类的方法")
-
-
 # 对于父类的方法，只要它不符合子类模拟的实物的行为，都可对其进行重写。为此，可在子类中定义一个这样的方法，
 # 即它与要重写的父类方法同名。这样，Python将不会考虑这个父类方法，而只关注你在子类中定义的相应方法。
 # 假设Car类有一个名为fill_gas_tank()的方法，它对全电动汽车来说毫无意义，因此我们可能想重写它。下面演示了一种重写的方式：
@@ -486,8 +473,6 @@ my_tesla.fill_gas_tank()
 # 使用继承时，可让子类保留从父类哪里继承而来的精华，并剔除不需要的糟粕。
 
 print("\n9.3.5  将实例用作属性")
-
-
 # 使用代码模拟实物时，我们可能会发现自己给类添加的细节越来越多：属性和方法清单以及文件都越来越长。在这种情况下，
 # 可能需要将类的一部分作为一个独立的类提取出来。我们可以将大型类拆分成多个协同工作的小类。
 class Car():
@@ -540,13 +525,10 @@ class ElectricCar(Car):  # 在ElectricCar类中，我们添加了一个名为sel
 
 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
-
 print(my_tesla.get_descriptive_name())
 my_tesla.battery.describe_battery()  # 我们创建一辆电动汽车，并将其存储在变量my_tesla中。要描述电瓶时，需要使用电动汽车的属性battery：
 
 print("\n下面再给Battery类添加一个方法，它根据电瓶容量报告汽车的续航里程:")
-
-
 class Car():
     '''一次模拟汽车的简单尝试'''
 
@@ -573,7 +555,6 @@ class Car():
     def read_odometer(self):
         '''打印一条指出汽车里程的消息'''
         print("This car has " + str(self.odometer_reading) + " miles on it.")
-
 
 class Battery():
     """一次模拟电动汽车电瓶的简单尝试"""
@@ -632,7 +613,6 @@ class Restaurant():
     def open_restaurant(self):
         print("This restaurant is open for business.")
 
-
 class IceCreamStand(Restaurant):
     def __init__(self, restaurant_name, cuisine_type):
         super().__init__(restaurant_name, cuisine_type)
@@ -644,7 +624,6 @@ class IceCreamStand(Restaurant):
         for flavor in self.flavors:
             print(" --" + flavor)
 
-
 my_restanrant = IceCreamStand("Xiao_LI_Restaurant", "west_food", )
 print("The restaurant's name is " + my_restanrant.restaurant_name.title() + ".")
 print("The restaurant is good at " + my_restanrant.cuisine_type + ".")
@@ -654,8 +633,6 @@ my_restanrant.open_restaurant()
 my_restanrant.describe_icecream()
 
 print("\n9.7 管理员")
-
-
 class User():
     def __init__(self, first_name, last_name, age, country):
         self.first_name = first_name
@@ -669,38 +646,32 @@ class User():
     def greet_user(self):
         print("Nice to meet you! ")
 
-
 class Admin(User):
     def __init__(self, first_name, last_name, age, country):
         super().__init__(first_name, last_name, age, country)
         privilegs = ["can add post", "can delete post", "can be user"]
-        self.privilegs = privilegs
+        self.privilegs1 = privilegs
 
     def show_privilegs(self):
         print("If you are an administrator account, you can have the following permissions: ")
-        for privileg in self.privilegs:
+        for privileg in self.privilegs1:
             print("—" + privileg)
-
 
 all_users = Admin("li", "zhixin", 18, "china")
 all_users.describe_user()
 all_users.greet_user()
 all_users.show_privilegs()
 
-
 class Privilegs():
     def __init__(self, privilegs):
         self.privilegs = privilegs
 
-
     def show_privilegs2(self):
         print("If you are an administrator account, you can have the following permissions: ")
-
 
 class Admin2():
     def __init__(self, privilegs):
        self.privilegs = Privilegs(privilegs)
-
 
 privilegs2 = Admin2("can add post")
 privilegs2.privilegs.show_privilegs2()

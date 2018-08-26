@@ -1,6 +1,4 @@
 print("8.1定义函数")  # 用def 定义函数或方法
-
-
 # 如:下面是一个打印问候语的简单函数，名为greet_user():
 def greet_user():
     print("Hello!")
@@ -25,8 +23,6 @@ print("\n8.2 传递实参")
 # 相同；也可使用关键字实参，其实每个实参都有变量名和值组成；还可使用列表和字典。
 
 print("\n8.2.1 位置实参")
-
-
 # 我们调用函数时，Python必须将函数调用中的每个实参都关联到函数定义中的一个形参。为此，最简单的关联方式是基于实参的顺序。这种方式被称为位置实参。
 def describe_pet(animal_type, pet_name):
     """显示宠物的信息"""
@@ -60,7 +56,6 @@ def describe_pet(animal_type, pet_name):
 describe_pet('harry', 'hamster')  # 由于实参'harry'在前，这个值将存储到animal_type中，因而结果跟上面的相反
 
 print("\n8.2.2 关键字实参 ")
-
 # 关键字实参是传递给函数的名称-值对。我们直接在实参中将名称和值关联起来了，因此向函数传递实参时不会混淆(不会得到名为
 # Hamster的Harry这样的结果).关键字实参让我们无须考虑函数调用中的实参顺序，还清楚地指出了函数调用中的各个值的用途。如：
 def describe_pets(animal_type, pet_name):  # 使用关键字实参来调用describe_pet():
@@ -70,7 +65,6 @@ def describe_pets(animal_type, pet_name):  # 使用关键字实参来调用descr
 describe_pets(pet_name='harry', animal_type='hamster')  # 无需考虑实参顺序，使用关键字对应
 
 print("\n8.2.3 默认值")
-
 # 编写函数时，可给每个形参指定默认值。在调用函数中给形参提供了实参时，Python将使用制定的实参值；否则，将使用形参的默认值。
 # 因此,给形参指定默认值后，可在函数调用中省略相应的实参。使用默认值可简化函数调用，还可清楚地指出函数的典型用法。
 # 例如，如果我们发现调用describe_pet()时，描述的大都是小狗，就可将形参animal_type的默认值设置为'dog'。这样，
@@ -82,8 +76,6 @@ def describe_pet(pet_name, animal_type='dog'):
 describe_pet("Harry")  # 省略animal_type默认的实参dog
 
 print("\n如果要描述的动物不是小狗，可使用类似于下面的函数说明：")
-
-
 def describe_pet(pet_name, animal_type='dog'):
     print('\nI have a ' + animal_type.title() + '.')
     print("My " + animal_type + "'s name is " + pet_name + ".")
@@ -165,7 +157,6 @@ print(musician)
 # 好格式的姓名返回给函数调用行。在函数调用行，将返回的值存储在变量musician章；然后将这个变量的值打印出来。
 
 print("\n8.3.3 返回字典")
-
 # 函数可返回任何类型的值，包括列表和字典等较复杂的数据结构。例如，下面的函数接受姓名的组成部分，并返回一个表示人的字典：
 def build_person(first_name, last_name):
     person = {"first": first_name, "last": last_name}  # 返回一个字典，其中包含有关一个人的信息
@@ -206,8 +197,6 @@ print("\n8.3.4 结合使用函数和while循环")
 # print("\nHello, " + formatted_name)
 
 print("\n动手试一试")
-
-
 # 8-6 城市名： 编写一个名为city_country()的函数，它接受城市的名称及其所属的国家。这个函数应返回一个格式类似于下面这样的字符串：
 def city_country(city, country):
     print(city.title() + "," + country.title())
@@ -229,6 +218,24 @@ new_album = make_album("zhangjie", "you are big")
 print(new_album)
 # 如果使用return，则必须有接收变量，因为return是把函数运行的结果返回给调用行，必须有一个指定的变量能够接收这个返回值，
 # 否则，就必须输出这个函数。
+
+print("\n8-8用户专辑")
+def make_album(singer_name, album_name, songs=0):
+    Music_album = {"singer_name": singer_name, "album_name": album_name}
+    if songs > 0:
+        Music_album["songs"] = songs
+    return Music_album
+
+# while make_album:
+#     name1 = input("singer_name")
+#     if name1 == "zhaolei":
+#         print(name1)
+#         break
+
+#     name2 = input("album_name")
+#     if name2 == "chengdu":
+#         print(name2)
+#         break
 
 print("\n8.4 传递列表")
 # 我们经常会发现，向函数传递列表很有用，这种列表包含的可能是名字，数字或更复杂的对象(如字典)。将列表传递给函数后，
@@ -382,5 +389,4 @@ def make_pizza(*toppings):
     # 接下来，我们在pizza.py所在的目录中创建另一个名为making_pizzas.py的文件，这个文件导入刚创建的模块，在调用make_pizza()两次：
     import make_pizzal
 
-pizza1.make_pizza(16, "mushrooms")
-pizza1.make_pizza(32, "pepperoni", "mushrooms", "green peppers")
+
