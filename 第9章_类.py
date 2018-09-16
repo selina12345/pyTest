@@ -6,7 +6,6 @@ print("9.1  创建和使用类")
 
 print("9.1.1  创建Dog类")
 
-
 # 根据Dog类创建的每个实例都将存储名字和年龄。我们赋予了每条小狗蹲下（sit())和打滚(roll_over())的能力：
 class Dog():
     """一次模拟小狗的简单尝试"""
@@ -84,8 +83,6 @@ Python在类Dog中查找方法sit()并运行其代码。Python以同样的方式
 # 我们也能够轻松地推断 出它是做什么的。"""
 
 print("\n3.创建多个实例")
-
-
 # 可按需求根据类创建任意数量的实例。下面再创建一个名为you_dog的实例：
 class Dog():
     def __init__(self, name, age):
@@ -114,8 +111,6 @@ you_dog.sit()
 you_dog.roll_over()
 
 print("\n动手试一试")
-
-
 # 9-1 餐馆：创建一个名为Restaurant的类，其方法__init__()设置两个属性：restaurant_name和cuisine_type.创建一个名为describe_restaurant()
 # 的方法和一个名为open_restaurant()的方法，其中前者打印前述两项信息，而后者打印一条消息，指出餐馆正在营业。
 class Restaurant():

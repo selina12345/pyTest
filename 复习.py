@@ -126,3 +126,70 @@ class Admin(User):
 user = Admin('Tony','Stark')
 
 user.privileges.show_privileges()
+
+class User():
+    def __init__(self, first_name, last_name, age):
+        self.first_name1 = first_name
+        self.last_name1 = last_name
+        self.age1 = age
+
+    def describe_user(self):
+        print("my name is" + self.first_name1+ self.last_name1 + " I am" + str(self.age1))
+
+    def greet_user(self):
+            print("Nice to meet you !" + self.first_name1 + self.last_name1)
+
+user = User("li", "zhixin",18)
+user.describe_user()
+user.greet_user()
+
+print("=======")
+class User():
+    def __init__(self, first_name, last_name, age,privielges):
+        self.first_name1 = first_name
+        self.last_name1 = last_name
+        self.age1 = age
+        self.privielges1 = privielges
+
+
+    def describe_user(self):
+        print("my name is" + self.first_name1 + self.last_name1 + " I am" + str(self.age1))
+
+    def greet_user(self):
+        print("Nice to meet you !" + self.first_name1 + self.last_name1)
+
+class Admin(User):
+        def __init__(self, first_name, last_name, age, privielges):
+            super().__init__(first_name, last_name, age, privielges)
+            privielges = ["can add post", "can delete post", "can ban user"]
+            self.privielges1 = privielges
+
+        def show_privileges(self):
+            for privielges2 in self.privielges1:
+                print("If you are an administrator account, you can have the following permissions: ")
+                print("_" + privielges2)
+
+admin = Admin("jiang", "jingjing",10, 111)
+admin.show_privileges()
+
+print("===================")
+class Privileges():
+    def __init__(self, privileges):
+        self.privileges1 = privileges
+        privielges = ["can add post", "can delete post", "can ban user"]
+
+    def show_privileges(self):
+        for privielges2 in self.privileges1:
+            print("you can have the following permissions: ")
+            print("_" + privielges2)
+
+class Admin():
+    def __init__(self, privileges1):
+        self.privielges1 = Privileges()
+
+Admin1 = Admin("LI")
+Privileges1 = Privileges("ZHI")
+Admin1.privielges1.show_privileges()
+Privileges1.show_privileges()
+
+
