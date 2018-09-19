@@ -1,4 +1,4 @@
-In Python you can create lists and dictionaries.
-In python you can delete elements and blank lines.
-In python you can use loop statements.
+In python, you can create lists and dictionaries.
+In python, you can delete elements and blank lines.
+In python, you can use loop statements.
 In python, you can use functions and classes.

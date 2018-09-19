@@ -128,3 +128,29 @@ new_notes = " "
 for line in lines:
     new_notes = new_notes + line
 print(new_notes)
+
+print("\n10-2 C语言学习笔记")
+with open("learning_python.txt") as learning_object:
+    notes = learning_object.read()
+    print(notes.replace("python", "C"))
+
+print("\n10-2 C语言学习笔记")
+notes = "learning_python.txt"
+with open(notes) as learning_object:
+    for line in learning_object:
+        print(line.replace("python", "C").rstrip())
+
+print("====")
+filename = 'learning_python'
+lines = []
+with open(filename) as file_object:
+    for line in file_object:
+        string = line.replace('python',"C")
+        lines.append(string)
+
+for message in lines:
+    print(message.strip())
+
+print("\n10.2 写入文件")
+# 保存数据的最简单方式之一是将其写入到文件中。通过将输出写入文件，即便关闭包含程序输出的终端窗口，这些输出也依然存在：
+# 我们可以在程序结束运行后查看这些输出，可与别人分享输出文件，还可以编写程h序来将这些输出读取到内存中并进行处理。
