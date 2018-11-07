@@ -87,7 +87,7 @@ print("\n10.1.6包含一百万的大型文件")
 # pi_string = ""
 # for line in lines:
 # pi_string += line.strip()
-# print(pi_string[:52] + "......")
+# print(pi_string[:50] + "......")
 # print(len(pi_string))
 #对于我们可处理的数据量，Python没有任何限制；只要系统的内存足够多，我们想处理多少数据都可以。
 
@@ -140,17 +140,64 @@ with open(notes) as learning_object:
     for line in learning_object:
         print(line.replace("python", "C").rstrip())
 
-print("====")
-filename = 'learning_python'
-lines = []
-with open(filename) as file_object:
-    for line in file_object:
-        string = line.replace('python',"C")
-        lines.append(string)
-
-for message in lines:
-    print(message.strip())
+# print("====")   ???
+# filename = "learning_python"
+# lines = []
+# with open(filename) as file_object:
+#     for line in file_object:
+#         string = line.replace('python', "C")
+#         lines.append(string)
+#
+# for message in lines:
+#     print(message.strip())
 
 print("\n10.2 写入文件")
 # 保存数据的最简单方式之一是将其写入到文件中。通过将输出写入文件，即便关闭包含程序输出的终端窗口，这些输出也依然存在：
-# 我们可以在程序结束运行后查看这些输出，可与别人分享输出文件，还可以编写程h序来将这些输出读取到内存中并进行处理。
+# 我们可以在程序结束运行后查看这些输出，可与别人分享输出文件，还可以编写程序来将这些输出读取到内存中并进行处理。
+print("\n10.2.1 写入空文件")
+# 要将文本写入文件，我们在调用open()时需要提供另一个实参，告诉Python我们要写入打开的文件。为明白其中的工作原理，
+# 我们来看一条简单的消息存储到文件中，而不是将其打印到屏幕上：
+filename = "programming.txt"
+with open(filename, "w") as file_obiect:   #第二个实参('w')告诉Python，我们要以写入模式打开这个文件.
+    file_obiect.write("I love programming.")
+print("\n10.2.2写入多行")
+#函数write()不会在你写入的文本末尾添加换行符，因此如果我们写入多行时没有指定换行符，文本看起来可能不是我们希望的那样：
+filename = "programming.txt"
+with open(filename, "w") as file_obiect:
+    file_obiect.write("I love programming.")
+    file_obiect.write("I love creating new gameg.")
+"""我们打开programming.txt，将发现两行内容挤在一起：    
+　　I love programming.I love creating new games.
+要让每个字符串都单独占一行，需要在write()语句中包含换行符："""
+filename = "programming.txt"
+with open(filename, "w") as file_obiect:
+    file_obiect.write("I love programming.\n")
+    file_obiect.write("I love creating new gameg.\n")
+#  现在，输出出现在不同行中：
+# I love programming.
+# I love creating new games.
+# 像显示到终端的输出一样，还可以使用空格、制表符和空行来设置这些输出的格式。
+
+print("\n10.2.3附加到文件")
+# 如果我们要给文件添加内容，而不是覆盖原有的内容，可以附加模式打开文件。我们以附加模式打开文件时，Python不会在返回文件对象前清空文件，
+# 而写入到文件的行都将添加到文件末尾。如果指定的文件不存在，Python将为我们创建一个空文件。
+# 下面来修改write_message.py, 在既有文件programming.txt中再添加一些我们酷爱编程的原因:
+filename = "programming.txt"
+with open(filename, "a") as file_obiect:
+    """我们打开文件时指定了实参'a'，以便将内容附加到文件末尾，而不是覆盖文件原来的内容。"""
+    file_obiect.write("I also love finding meaning in large datasets.\n")
+    file_obiect.write("I love creating apps that can run in a browser.\n")
+    """我们有写入了两行，它们被添加到文件programming.txt末尾："""
+#programming.txt
+#I love programming.
+#I love creating new games.
+#I also love finding meaning in large datasets.
+#I love creating apps tan can run in a browser.
+#最终的结果是，文件原来的内容还在，它们后面是我们刚添加的内容。
+
+print("\n172动手试一试")
+print("10-3访客")
+#filename = "guest.txt"
+#with open(filename, "a") as file_obiect:
+    #guest = input("Please input you name:")
+    #file_obiect.write(guest.title() + "\n")
